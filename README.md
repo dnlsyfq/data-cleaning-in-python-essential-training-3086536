@@ -22,5 +22,19 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 ## Error in Data
 
 1. Missing data
-2. Extreme data
+2. Extreme data (Out of scale)
 3. Duplicate data
+
+Chapter 1
+```
+df.dtypes
+df[df.isnull().any(axis=1)]
+df['amount'].astype('Int32')
+```
+
+```
+df.sample(10)
+df.groupby('name').describe()
+df['name'].value_counts()
+
+```
