@@ -36,5 +36,17 @@ df['amount'].astype('Int32')
 df.sample(10)
 df.groupby('name').describe()
 df['name'].value_counts()
+pd.pivot(df, index='time', columns='name').plot(subplots=True)
+df.query('name == "cpu" & (value < 0 | value > 100)')
 
+
+// remove outliers
+mem = df[df['name'] == 'mem']['value']
+z_score = (mem - mem.mean())/mem.std()
+bad_mem = mem[z_score.abs() > 2]
+df.loc[bad_mem.index]
+```
+
+```
+df.duplicated(['date', 'name']) // find duplicated in date and name
 ```
