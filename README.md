@@ -50,3 +50,10 @@ df.loc[bad_mem.index]
 ```
 df.duplicated(['date', 'name']) // find duplicated in date and name
 ```
+
+```
+df[df.isnull().any(axis=1)]
+```
+
+```
+```
